@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Data Glacier Deployment on Flask</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary on NBA Players </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Ratings" placeholder="Ratings" required="required" />
+        <input type="text" name="Age" placeholder="Age" required="required" />
+		<input type="text" name="Minutes_Played" placeholder="Minutes_Played" required="required" />
+		<input type="text" name="Fieldgoal_Percentage" placeholder="Fieldgoal_Percentage" required="required" />
+        <input type="text" name="Threepoint_Percentage" placeholder="Threepoint_Percentage" required="required" />
+		<input type="text" name="Twopoint_Percentage" placeholder="Twopoint_Percentage" required="required" />
+		<input type="text" name="Freethrow_Percentage" placeholder="Freethrow_Percentage" required="required" />
+        <input type="text" name="Total_Rebounds" placeholder="Total_Rebounds" required="required" />
+		<input type="text" name="Asists" placeholder="Asists" required="required" />
+		<input type="text" name="Steals" placeholder="Steals" required="required" />
+        <input type="text" name="Blocks" placeholder="Blocks" required="required" />
+		<input type="text" name="Turnovers" placeholder="Turnovers" required="required" />
+		<input type="text" name="Personal_Fouls" placeholder="Personal_Fouls" required="required" />
+		<input type="text" name="Points" placeholder="Points" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
