@@ -1,0 +1,12 @@
+file_type: csv
+dataset_name: df_test
+file_name: survival_data
+inbound_delimiter: ","
+columns:
+    - Age_start_observed
+    - Age_end
+    - Truncated
+    - Censored
+    - Dead
+    - Date_start_observed
+    - Date_end_observed
